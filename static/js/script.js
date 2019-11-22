@@ -211,7 +211,8 @@ $("#profile_div").click(function () {
 		// Open chat
 		AnimateRotate(0,90, '#launcher')
 		launch_state = 90;
-		$('#launcher').attr('src', 'static/img/close-chat.png')
+		$('#launcher').attr('src', 'static/img/close-chat.png');
+
 		// ready to type on open
 		setTimeout(function(){ 
 			$('#userInput').focus();
@@ -221,7 +222,7 @@ $("#profile_div").click(function () {
 		// Close chat
 		AnimateRotate(90,0, '#launcher')
 		launch_state = 0;
-		$('#launcher').attr('src', 'static/img/launcher-icon.png')
+		$('#launcher').attr('src', 'static/img/launcher-icon.png');
 	}
 
 	$(".widget").slideToggle();
