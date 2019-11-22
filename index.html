@@ -6,11 +6,16 @@
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Raleway:500&display=swap" rel="stylesheet">
-   <!--Import materialize.css-->
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu:500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Odibee+Sans&display=swap" rel="stylesheet"> 
+
+  <!--Import materialize.css-->
   <link rel="stylesheet" type="text/css" href="static/css/materialize.min.css">
   
   <!--Main css-->
   <link rel="stylesheet" type="text/css" href="static/css/style.css">
+  <!-- Style: Blue-vivid -->
+  <link rel="stylesheet" type="text/css" href="static/css/blue-vivid.css">
 
  
 
@@ -20,20 +25,44 @@
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8"/>
+
+  <style>
+    
+
+  </style>
+
 </head>
 
 <body>
+  <div class="bgimg-1">
+    <div class="caption">
+      <span class="border">Rasa Chatbot-Widget</span><br/>
+      <span class="border-sm">Forked from <a href="https://github.com/JiteshGaikwad/Chatbot-Widget">here</a></span><br/><br>
+      <div  style="margin-left:5%; margin-top:5%">
+        <div class='changes'>
+          <div class="changes-header">Forked Changes</div>
+          <ul class='dots'>
+              <li>. generic launcher icon</li>
+              <li>. launcher icon rotate open / close</li>
+              <li>. chat slide-up / down</li>
+              <li>. cursor focus in text box</li>
+              <li>. split colorization styles into separate file making it easier to restyle</li>
+              <li>. tightend up the UI a bit (smaller radius / padding / font sizing)</li>
+            </ul>
+        </div>
+      </div>
+      </div>
+
+  </div>
 
   <div class="container">
     <div class="widget">
 
       <div class="chat_header">
         <!--Add the name of the bot here -->
-        <span class="chat_header_title">Restobot</span>
-        <span id="close">
-          <i class="fa fa-times-circle" aria-hidden="true"></i>
-        </span>
-
+        <div class="chat_header_title">Rasa Chatbot-Widget</div>
+        <div id="offline_message"></div>
       </div>
       <!--Chatbot contents goes here -->
       <div class="chats" id="chats">
@@ -50,10 +79,9 @@
       </div>
     </div>
     <!--bot widget -->
-    <div class="profile_div" id="profile_div">
-      <img class="imgProfile" src="static/img/botAvatar.png" />
-    </div>
-  </div>
+    <button type="button" class="launcher profile_div" id="profile_div" style="outline: none;">
+        <img class="imgProfile" id='launcher' src="static/img/launcher-icon.png" class="open-launcher" alt="">
+      </button>
 
   <!--JavaScript at end of body for optimized loading-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

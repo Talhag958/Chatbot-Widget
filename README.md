@@ -14,6 +14,19 @@ A Chat widget easy to connect to RASA bot through [Rest](https://rasa.com/docs/r
 
 [![forthebadge](https://forthebadge.com/images/badges/makes-people-smile.svg)](https://forthebadge.com)
 
+## THANK YOU!
+Thanks to [Jitesh Gaikwad](https://github.com/JiteshGaikwad) for building this chat interface for RASA.
+
+## Changes by Jonathan Wheat
+- Generic launch / close icon
+- Launcher icon rotates to open / close chat
+- Launcher icon changes to close icon when chat is open
+- Chat slides open (up) / closed (down)
+- Cursor focus in message box
+- Separated colorization styles into separate file making it easier to restyle
+- Tightened up the UI a bit (smaller radius / padding, larger font sizing)
+
+
 ## Features
 
 - [Text Messages](https://github.com/JiteshGaikwad/Chatbot-Widget/blob/dad02a53e5449f6b1daa3f70b2c7d0846d228dde/static/js/script.js#L156)

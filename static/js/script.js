@@ -10,6 +10,8 @@ $(document).ready(function () {
 	//if you want the bot to start the conversation
 	// action_trigger();
 	
+	// initial launch icon degrees of rotation
+	launch_state = 0;
 })
 
 // ========================== restart conversation ========================
@@ -204,8 +206,25 @@ function setBotResponse(response) {
 
 //====================================== Toggle chatbot =======================================
 $("#profile_div").click(function () {
-	$(".profile_div").toggle();
-	$(".widget").toggle();
+	
+	if (launch_state == 0) {
+		// Open chat
+		AnimateRotate(0,90, '#launcher')
+		launch_state = 90;
+		$('#launcher').attr('src', 'static/img/close-chat.png')
+		// ready to type on open
+		setTimeout(function(){ 
+			$('#userInput').focus();
+		}, 1000);
+		
+	} else {
+		// Close chat
+		AnimateRotate(90,0, '#launcher')
+		launch_state = 0;
+		$('#launcher').attr('src', 'static/img/launcher-icon.png')
+	}
+
+	$(".widget").slideToggle();
 });
 
 //====================================== Suggestions ===========================================
@@ -237,15 +256,23 @@ $(document).on("click", ".menu .menuChips", function () {
 });
 
 
-$("#close").click(function () {
-	$(".profile_div").toggle();
-	$(".widget").toggle();
-	scrollToBottomOfResults();
-});
-
 $("#restart").click(function () {
 	restartConversation()
 });
+
+
+function AnimateRotate(start,angle, element) {
+    var $elem = $(element);
+
+	$({deg: start}).animate({deg: angle}, {
+		duration: 300,
+        step: function(now) {
+            $elem.css({
+                transform: 'rotate(' + now + 'deg)'
+            });
+        }
+    });
+}
 
 //====================================== Cards Carousel =========================================
 
@@ -418,4 +445,5 @@ function showBotTyping() {
 function hideBotTyping() {
 	$('#botAvatar').remove();
 	$('.botTyping').remove();
+	$('#userInput').focus();
 }
